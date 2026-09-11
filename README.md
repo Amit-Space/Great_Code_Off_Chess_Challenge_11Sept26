@@ -1,10 +1,10 @@
-# Chess Move Validator — Code-Off Solution
+# Chess Move Validator: Code-Off Solution
 
 A from-scratch chess move validator built for the Version1 Code-Off. Given a
 board, whose turn it is, and one fully-specified move, it decides whether the
 move is **legal** and reports what happened (capture, check).
 
-No chess libraries — only the Python standard library (`json`, `sys`).
+No chess libraries: only the Python standard library (`json`, `sys`).
 
 ## Run it (submission command)
 
@@ -69,12 +69,12 @@ checks the opponent, and `resulting_board` is the board after the move.
 Validate the single given move directly (no full move generation):
 
 1. The board must be a valid 8×8 grid of piece tokens.
-2. Squares must be real (a1–h8) and it can't be a null move.
+2. Squares must be real (a1-h8) and it can't be a null move.
 3. A piece of the side-to-move must sit on `from`, and `to` can't hold your own piece.
 4. The move must match the piece's shape, with a clear path for sliding pieces
    and proper pawn-capture rules.
 5. Simulate the move on a copy and confirm it doesn't leave **your own king in
-   check** — one test that covers pins, moving into check, and unaddressed checks.
+   check**: one test that covers pins, moving into check, and unaddressed checks.
 6. If legal, report the capture, whether the **opponent's** king is now in check,
    and the resulting board.
 
@@ -100,8 +100,8 @@ Expected: `10 / 10 correct`.
 
 ## How it's graded
 
-The organizer runs this one command and grades the result — no interactive
-input, no network, no manual steps:
+The organizer runs this one command and grades the result, with no interactive
+input, no network, and no manual steps:
 
 ```
 python3 my_solution/solve.py
@@ -112,8 +112,8 @@ Their process (per SPEC.md's submission contract):
 1. Pipe the full JSON array of the **50 hidden test cases** into the program's **stdin**.
 2. Read the full JSON array of results from **stdout** once the program exits.
 3. Time the whole batch (start to finish).
-4. Score: **correctness first** — the number of cases where the `legal` value
-   matches — with **total time only as a tiebreaker**.
+4. Score: **correctness first** (the number of cases where the `legal` value
+   matches), with **total time only as a tiebreaker**.
 
 Concretely, with the organizer's private grader and hidden cases:
 
@@ -122,12 +122,12 @@ python3 grade.py --cases test_cases_graded.json --cmd "python3 my_solution/solve
 ```
 
 `grade.py` and `test_cases_graded.json` belong to the organizer and are not part
-of this repo. The command above is identical to the public self-check — only the
+of this repo. The command above is identical to the public self-check; only the
 case file differs.
 
 ## Files
 
-- `my_solution/solve.py` — the solution (Python 3, standard library only).
-- `my_solution/sample_input.json` — a couple of example cases to try.
-- `SPEC.md` — the full problem statement.
-- `grade.py`, `test_cases_public.json` — the self-check harness and public samples.
+- `my_solution/solve.py`: the solution (Python 3, standard library only).
+- `my_solution/sample_input.json`: a couple of example cases to try.
+- `SPEC.md`: the full problem statement.
+- `grade.py`, `test_cases_public.json`: the self-check harness and public samples.

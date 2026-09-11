@@ -1,4 +1,4 @@
-# Organizer-private files — MUST NOT be published (see ORGANIZER_README.md).
+# Organizer-private files: MUST NOT be published (see ORGANIZER_README.md).
 # These contain the hidden scoring key and ground-truth logic.
 /test_cases_graded.json
 /reference_validator.py

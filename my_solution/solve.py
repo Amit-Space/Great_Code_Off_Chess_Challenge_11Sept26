@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Chess move validator for the Version1 Code-Off — hand-rolled, no chess engine.
+Chess move validator for the Version1 Code-Off (hand-rolled, no chess engine).
 
 Reads one JSON array of cases from stdin, writes one JSON array of results to
 stdout (same order). Mirrors reference_validator.py's rulings for the in-scope
