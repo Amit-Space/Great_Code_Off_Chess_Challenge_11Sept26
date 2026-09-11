@@ -98,6 +98,33 @@ python3 grade.py --cases test_cases_public.json --cmd "python3 my_solution/solve
 
 Expected: `10 / 10 correct`.
 
+## How it's graded
+
+The organizer runs this one command and grades the result — no interactive
+input, no network, no manual steps:
+
+```
+python3 my_solution/solve.py
+```
+
+Their process (per SPEC.md's submission contract):
+
+1. Pipe the full JSON array of the **50 hidden test cases** into the program's **stdin**.
+2. Read the full JSON array of results from **stdout** once the program exits.
+3. Time the whole batch (start to finish).
+4. Score: **correctness first** — the number of cases where the `legal` value
+   matches — with **total time only as a tiebreaker**.
+
+Concretely, with the organizer's private grader and hidden cases:
+
+```bash
+python3 grade.py --cases test_cases_graded.json --cmd "python3 my_solution/solve.py"
+```
+
+`grade.py` and `test_cases_graded.json` belong to the organizer and are not part
+of this repo. The command above is identical to the public self-check — only the
+case file differs.
+
 ## Files
 
 - `my_solution/solve.py` — the solution (Python 3, standard library only).
