@@ -1,4 +1,4 @@
-# Chess Move Validator: Code-Off Solution
+# Chess Move Validator: Great Code Off Chess Challenge
 
 A from-scratch chess move validator built for the Version1 Code-Off. Given a
 board, whose turn it is, and one fully-specified move, it decides whether the
