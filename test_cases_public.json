@@ -1,0 +1,1342 @@
+[
+  {
+    "id": "sample_legal_pawn_double",
+    "note": "Legal: pawn double-step from its start rank",
+    "input": {
+      "board": [
+        [
+          "bR",
+          "bN",
+          "bB",
+          "bQ",
+          "bK",
+          "bB",
+          "bN",
+          "bR"
+        ],
+        [
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP"
+        ],
+        [
+          "wR",
+          "wN",
+          "wB",
+          "wQ",
+          "wK",
+          "wB",
+          "wN",
+          "wR"
+        ]
+      ],
+      "turn": "white",
+      "move": {
+        "from": "e2",
+        "to": "e4"
+      }
+    },
+    "expected": {
+      "legal": true,
+      "reason_code": null,
+      "reason": null,
+      "capture": null,
+      "opponent_in_check": false,
+      "resulting_board": [
+        [
+          "bR",
+          "bN",
+          "bB",
+          "bQ",
+          "bK",
+          "bB",
+          "bN",
+          "bR"
+        ],
+        [
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          "wP",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          null,
+          "wP",
+          "wP",
+          "wP"
+        ],
+        [
+          "wR",
+          "wN",
+          "wB",
+          "wQ",
+          "wK",
+          "wB",
+          "wN",
+          "wR"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "sample_no_piece",
+    "note": "Illegal: no piece on the source square",
+    "input": {
+      "board": [
+        [
+          "bR",
+          "bN",
+          "bB",
+          "bQ",
+          "bK",
+          "bB",
+          "bN",
+          "bR"
+        ],
+        [
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP"
+        ],
+        [
+          "wR",
+          "wN",
+          "wB",
+          "wQ",
+          "wK",
+          "wB",
+          "wN",
+          "wR"
+        ]
+      ],
+      "turn": "white",
+      "move": {
+        "from": "e5",
+        "to": "e6"
+      }
+    },
+    "expected": {
+      "legal": false,
+      "reason_code": "NO_PIECE_AT_SOURCE",
+      "reason": "There is no piece on the source square.",
+      "capture": null,
+      "opponent_in_check": false,
+      "resulting_board": null
+    }
+  },
+  {
+    "id": "sample_wrong_turn",
+    "note": "Illegal: it's not that color's turn",
+    "input": {
+      "board": [
+        [
+          "bR",
+          "bN",
+          "bB",
+          "bQ",
+          "bK",
+          "bB",
+          "bN",
+          "bR"
+        ],
+        [
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP"
+        ],
+        [
+          "wR",
+          "wN",
+          "wB",
+          "wQ",
+          "wK",
+          "wB",
+          "wN",
+          "wR"
+        ]
+      ],
+      "turn": "black",
+      "move": {
+        "from": "e2",
+        "to": "e4"
+      }
+    },
+    "expected": {
+      "legal": false,
+      "reason_code": "WRONG_TURN",
+      "reason": "That piece belongs to the side that is NOT to move.",
+      "capture": null,
+      "opponent_in_check": false,
+      "resulting_board": null
+    }
+  },
+  {
+    "id": "sample_own_piece_dest",
+    "note": "Illegal: own piece already on destination",
+    "input": {
+      "board": [
+        [
+          "bR",
+          "bN",
+          "bB",
+          "bQ",
+          "bK",
+          "bB",
+          "bN",
+          "bR"
+        ],
+        [
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP"
+        ],
+        [
+          "wR",
+          "wN",
+          "wB",
+          "wQ",
+          "wK",
+          "wB",
+          "wN",
+          "wR"
+        ]
+      ],
+      "turn": "white",
+      "move": {
+        "from": "d1",
+        "to": "d2"
+      }
+    },
+    "expected": {
+      "legal": false,
+      "reason_code": "DESTINATION_OCCUPIED_BY_OWN_PIECE",
+      "reason": "The destination square already has one of your own pieces on it.",
+      "capture": null,
+      "opponent_in_check": false,
+      "resulting_board": null
+    }
+  },
+  {
+    "id": "sample_capture",
+    "note": "Legal: knight captures an enemy pawn",
+    "input": {
+      "board": [
+        [
+          null,
+          null,
+          null,
+          null,
+          "bK",
+          null,
+          null,
+          null
+        ],
+        [
+          "bP",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          "bP",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          "wN",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          "wB",
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          "wK",
+          null,
+          null,
+          null
+        ]
+      ],
+      "turn": "white",
+      "move": {
+        "from": "d4",
+        "to": "c6"
+      }
+    },
+    "expected": {
+      "legal": true,
+      "reason_code": null,
+      "reason": null,
+      "capture": {
+        "piece": "bP",
+        "square": "c6"
+      },
+      "opponent_in_check": false,
+      "resulting_board": [
+        [
+          null,
+          null,
+          null,
+          null,
+          "bK",
+          null,
+          null,
+          null
+        ],
+        [
+          "bP",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          "wN",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          "wB",
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          "wK",
+          null,
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  {
+    "id": "sample_pin",
+    "note": "Illegal: moving this piece would expose your own king to check",
+    "input": {
+      "board": [
+        [
+          null,
+          null,
+          null,
+          null,
+          "bR",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          "wB",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          "wK",
+          null,
+          null,
+          null
+        ]
+      ],
+      "turn": "white",
+      "move": {
+        "from": "e2",
+        "to": "d3"
+      }
+    },
+    "expected": {
+      "legal": false,
+      "reason_code": "MOVE_EXPOSES_OWN_KING_TO_CHECK",
+      "reason": "This move would leave (or put) your own king in check.",
+      "capture": null,
+      "opponent_in_check": false,
+      "resulting_board": null
+    }
+  },
+  {
+    "id": "sample_check",
+    "note": "Legal, and it puts the opponent in check",
+    "input": {
+      "board": [
+        [
+          null,
+          null,
+          null,
+          null,
+          "bK",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          "wR",
+          null,
+          null,
+          "wK"
+        ]
+      ],
+      "turn": "white",
+      "move": {
+        "from": "e1",
+        "to": "e5"
+      }
+    },
+    "expected": {
+      "legal": true,
+      "reason_code": null,
+      "reason": null,
+      "capture": null,
+      "opponent_in_check": true,
+      "resulting_board": [
+        [
+          null,
+          null,
+          null,
+          null,
+          "bK",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          "wR",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          "wK"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "sample_pawn_diagonal_capture",
+    "note": "Legal: pawn captures diagonally",
+    "input": {
+      "board": [
+        [
+          null,
+          null,
+          null,
+          null,
+          "bK",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          "bP",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          "wP",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          "wK",
+          null,
+          null,
+          null
+        ]
+      ],
+      "turn": "white",
+      "move": {
+        "from": "e4",
+        "to": "d5"
+      }
+    },
+    "expected": {
+      "legal": true,
+      "reason_code": null,
+      "reason": null,
+      "capture": {
+        "piece": "bP",
+        "square": "d5"
+      },
+      "opponent_in_check": false,
+      "resulting_board": [
+        [
+          null,
+          null,
+          null,
+          null,
+          "bK",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          "wP",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          "wK",
+          null,
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  {
+    "id": "sample_rook_path_blocked",
+    "note": "Illegal: rook's own pawn blocks the path",
+    "input": {
+      "board": [
+        [
+          null,
+          null,
+          null,
+          null,
+          "bK",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "wP",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "wR",
+          null,
+          null,
+          null,
+          "wK",
+          null,
+          null,
+          null
+        ]
+      ],
+      "turn": "white",
+      "move": {
+        "from": "a1",
+        "to": "a5"
+      }
+    },
+    "expected": {
+      "legal": false,
+      "reason_code": "PATH_BLOCKED",
+      "reason": "Another piece is blocking the path to the destination.",
+      "capture": null,
+      "opponent_in_check": false,
+      "resulting_board": null
+    }
+  },
+  {
+    "id": "sample_invalid_square",
+    "note": "Illegal: destination is not a real square on the board",
+    "input": {
+      "board": [
+        [
+          "bR",
+          "bN",
+          "bB",
+          "bQ",
+          "bK",
+          "bB",
+          "bN",
+          "bR"
+        ],
+        [
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP",
+          "bP"
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP",
+          "wP"
+        ],
+        [
+          "wR",
+          "wN",
+          "wB",
+          "wQ",
+          "wK",
+          "wB",
+          "wN",
+          "wR"
+        ]
+      ],
+      "turn": "white",
+      "move": {
+        "from": "e2",
+        "to": "e9"
+      }
+    },
+    "expected": {
+      "legal": false,
+      "reason_code": "INVALID_SQUARE",
+      "reason": "One of the given squares is not a valid a1-h8 square.",
+      "capture": null,
+      "opponent_in_check": false,
+      "resulting_board": null
+    }
+  }
+]

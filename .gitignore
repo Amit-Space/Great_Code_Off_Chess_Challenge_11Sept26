@@ -1,0 +1,18 @@
+# Organizer-private files — MUST NOT be published (see ORGANIZER_README.md).
+# These contain the hidden scoring key and ground-truth logic.
+/test_cases_graded.json
+/reference_validator.py
+/generate_test_cases.py
+/ORGANIZER_README.md
+
+# Organizer-only helpers, not part of the competitor submission.
+/requirements.txt
+/example_submissions/
+
+# Python / environment noise
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.vscode/
+.DS_Store
